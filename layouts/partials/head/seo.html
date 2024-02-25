@@ -62,7 +62,8 @@
         <title>{{ .Site.Title }} {{ .Site.Params.main.separator }} {{ .Title }}</title>
     {{ end -}}
 
-    <meta name="description" content="{{ $.Scratch.Get "description" }}">
+    <meta name="description" content=" {{ $.Scratch.Get "description" }}">
+    <meta name="keywords" content="{{ range .Keywords }} {{ . }},{{ end }}">
 
 {{ if $.Scratch.Get "paginator" }}
     <link rel="canonical" href="{{ .Paginator.URL | absURL }}">
